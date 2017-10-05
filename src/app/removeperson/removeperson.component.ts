@@ -34,9 +34,9 @@ export class RemovepersonComponent implements OnInit {
      );
   }
   deletingData(id) {
-      this.refID = id;
+   
      
-       this.dbService.deleteData(`${this.baseURL}/${this.rootNode}/${this.refID}.json`)
+       this.dbService.deleteData(`${this.baseURL}/${this.rootNode}/${id}.json`)
        .subscribe(
          (response) => console.log(response),
         (error) => console.log(error)

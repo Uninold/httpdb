@@ -18,7 +18,7 @@ import { PagerService } from '../services/pager.service';
 
 export class ListingComponent implements OnInit {
   @Output() modifyClicked = new EventEmitter<any>();
-  @Output() deletingData = new EventEmitter<any>();
+  @Output() deleteClicked = new EventEmitter<any>();
   @Input() update: boolean;
   @Input() delete: boolean;
 
@@ -50,7 +50,10 @@ export class ListingComponent implements OnInit {
  
 //-----------------------------------------------------
 
-
+  deleteData(dataID) {
+    // console.log(dataID);
+    this.deleteClicked.emit(dataID);
+  }
 
 
 //-----------------------------------------------------
