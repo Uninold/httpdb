@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,Input, EventEmitter } from '@angular/core';
 import { DbService } from '../services/db.service';
 import { IPerson } from '../interfaces/iperson';
 
@@ -18,6 +18,9 @@ import { PagerService } from '../services/pager.service';
 
 export class ListingComponent implements OnInit {
   @Output() modifyClicked = new EventEmitter<any>();
+  @Output() deletingData = new EventEmitter<any>();
+  @Input() update: boolean;
+  @Input() delete: boolean;
 
   baseURL = 'https://first-pro-5cc9a.firebaseio.com';
   rootNode = 'people';
@@ -44,7 +47,7 @@ export class ListingComponent implements OnInit {
     // console.log(dataID);
     this.modifyClicked.emit(dataID);
   }
-
+ 
 //-----------------------------------------------------
 
 

@@ -16,6 +16,7 @@ export class RemovepersonComponent implements OnInit {
   baseURL = 'https://first-pro-5cc9a.firebaseio.com';
   rootNode = 'people';
   refID: any;
+  remove = true;
   constructor(private dbService: DbService) { }
 
   peopleCollection: Array<IPerson> = [];
